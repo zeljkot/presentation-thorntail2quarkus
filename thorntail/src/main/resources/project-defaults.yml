@@ -1,0 +1,21 @@
+thorntail:
+  datasources:
+    data-sources:
+      DemoDS:
+        driver-name: org.postgresql
+        connection-url: jdbc:postgresql://localhost/demo
+        user-name: demo_user
+        password: demo_pass
+        valid-connection-checker-class-name: org.jboss.jca.adapters.jdbc.extensions.postgres.PostgreSQLValidConnectionChecker
+        validate-on-match: true
+        background-validation: false
+        exception-sorter-class-name: org.jboss.jca.adapters.jdbc.extensions.postgres.PostgreSQLExceptionSorter
+    jdbc-drivers:
+      org.postgresql:
+        driver-class-name: org.postgresql.Driver
+        xa-datasource-class-name: org.postgresql.xa.PGXADataSource
+        driver-module-name: org.postgresql
+  ds:
+    name: DemoDS
+  jpa:
+    default-datasource: DemoDS
